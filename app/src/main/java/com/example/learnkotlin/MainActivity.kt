@@ -45,6 +45,10 @@ fun GreetingPreview() {
     }
 }*/
 
+
+
+// ######  LEARNING STARTS HERE :  #######
+/*
 private fun testMinOf(a: Int, b: Int): Int = if (a<b) a else b
 
 
@@ -84,3 +88,38 @@ class User (email: String, private var password: String, var age: Int) {
 
 class Parent ( var firstname: String = "", var lastname: String = "", var phone: String = "", var emailAddress: String = "", var postalAddress: String = "")
 class Child (var firstname: String = "", var lastname: String = "", var parent1: Parent, var parent2: Parent, var postalAddress: String = "", var allergies: Array<String> = [])
+*/
+
+// Switch cases like in Java
+
+/*var leRetour = 200
+
+fun printResponse(reponsedelapi: Int) = when (reponsedelapi){
+    200, 201, 202 -> print("SUCCESS")
+    300, 301, 302 -> print("REDIRECTION")
+    401, 403, 404 -> print ("ERROR")
+    else -> print("UNKNOWN")
+}
+
+fun main(){
+    printResponse(leRetour)
+}*/
+
+
+// ####### Enumeration ######
+
+private enum class ApiResponses(code: Int) {
+    OK(200),
+    NOT_FOUND(404),
+    UNAUTHORIZED(401),
+    FORBIDDEN(403),
+    UNKNOWN(0);
+}
+
+val reponse: ApiResponses = ApiResponses.UNKNOWN
+
+when (reponse) {
+    ApiResponses.OK -> print("OK")
+    ApiResponses.FORBIDDEN -> print("FORBIDDEN")
+    // ...
+}
